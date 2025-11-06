@@ -1,7 +1,22 @@
 import { ProductVisibility } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 
 import prisma from "@/lib/prisma";
 import { Locale, locales } from "@/lib/i18n";
+
+const productWithRelationsArgs = {
+  include: {
+    category: true,
+    brand: true,
+    images: {
+      orderBy: {
+        order: "asc" as const,
+      },
+    },
+  },
+} satisfies Prisma.ProductDefaultArgs;
+
+export type ProductWithRelations = Prisma.ProductGetPayload<typeof productWithRelationsArgs>;
 
 export async function getLanguageOrder() {
   const setting = await prisma.siteSetting.findUnique({
@@ -9,7 +24,7 @@ export async function getLanguageOrder() {
   });
 
   if (!setting) {
-    return locales;
+    return Array.from(locales);
   }
 
   const order = setting.value
@@ -17,7 +32,7 @@ export async function getLanguageOrder() {
     .map((item) => item.trim())
     .filter((item): item is Locale => locales.includes(item as Locale));
 
-  return order.length ? order : locales;
+  return order.length ? order : Array.from(locales);
 }
 
 export async function getBanners() {
@@ -73,17 +88,15 @@ export async function getBrandsWithCount() {
   }));
 }
 
-export async function getFeaturedProducts(limit = 6) {
-  return prisma.product.findMany({
+export async function getFeaturedProducts(limit = 6): Promise<ProductWithRelations[]> {
+  const products = await prisma.product.findMany({
     where: { visibility: ProductVisibility.ACTIVE },
     orderBy: { createdAt: "desc" },
     take: limit,
-    include: {
-      category: true,
-      brand: true,
-      images: { orderBy: { order: "asc" } },
-    },
+    include: productWithRelationsArgs.include,
   });
+
+  return products as ProductWithRelations[];
 }
 
 export interface GetProductsParams {
@@ -94,17 +107,17 @@ export interface GetProductsParams {
   skip?: number;
 }
 
-export async function getProducts(params: GetProductsParams = {}) {
+export async function getProducts(params: GetProductsParams = {}): Promise<ProductWithRelations[]> {
   const { search, categorySlug, brandSlug, skip, take } = params;
 
-  return prisma.product.findMany({
+  const products = await prisma.product.findMany({
     where: {
       visibility: ProductVisibility.ACTIVE,
       ...(search
         ? {
             OR: [
-              { nameUz: { contains: search, mode: "insensitive" } },
-              { nameRu: { contains: search, mode: "insensitive" } },
+              { nameUz: { contains: search } },
+              { nameRu: { contains: search } },
             ],
           }
         : {}),
@@ -122,12 +135,10 @@ export async function getProducts(params: GetProductsParams = {}) {
     orderBy: { createdAt: "desc" },
     skip,
     take,
-    include: {
-      category: true,
-      brand: true,
-      images: { orderBy: { order: "asc" } },
-    },
+    include: productWithRelationsArgs.include,
   });
+
+  return products as ProductWithRelations[];
 }
 
 export async function countProducts(params: GetProductsParams = {}) {
@@ -139,8 +150,8 @@ export async function countProducts(params: GetProductsParams = {}) {
       ...(search
         ? {
             OR: [
-              { nameUz: { contains: search, mode: "insensitive" } },
-              { nameRu: { contains: search, mode: "insensitive" } },
+              { nameUz: { contains: search } },
+              { nameRu: { contains: search } },
             ],
           }
         : {}),
@@ -158,25 +169,23 @@ export async function countProducts(params: GetProductsParams = {}) {
   });
 }
 
-export async function getProductBySlug(slug: string) {
-  return prisma.product.findUnique({
+export async function getProductBySlug(slug: string): Promise<ProductWithRelations | null> {
+  const product = await prisma.product.findUnique({
     where: { slug },
-    include: {
-      category: true,
-      brand: true,
-      images: { orderBy: { order: "asc" } },
-    },
+    include: productWithRelationsArgs.include,
   });
+
+  return product as ProductWithRelations | null;
 }
 
 export async function getRelatedProducts(options: {
   categoryId: number;
   excludeProductId: number;
   take?: number;
-}) {
+}): Promise<ProductWithRelations[]> {
   const { categoryId, excludeProductId, take = 4 } = options;
 
-  return prisma.product.findMany({
+  const products = await prisma.product.findMany({
     where: {
       visibility: ProductVisibility.ACTIVE,
       categoryId,
@@ -184,10 +193,8 @@ export async function getRelatedProducts(options: {
     },
     orderBy: { createdAt: "desc" },
     take,
-    include: {
-      category: true,
-      brand: true,
-      images: { orderBy: { order: "asc" } },
-    },
+    include: productWithRelationsArgs.include,
   });
+
+  return products as ProductWithRelations[];
 }
