@@ -2,9 +2,9 @@
 
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { FormEvent, Suspense, useState } from "react";
 
-export default function AdminLoginPage() {
+function AdminLoginForm() {
   const searchParams = useSearchParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -102,5 +102,23 @@ export default function AdminLoginPage() {
         </form>
       </div>
     </div>
+  );
+}
+
+function AdminLoginFallback() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-subtle/40 px-4">
+      <div className="w-full max-w-md space-y-6 rounded-[var(--radius-lg)] border border-subtle/80 bg-surface p-10 text-center text-sm text-muted shadow-xl shadow-primary/10">
+        Loading sign-in form...
+      </div>
+    </div>
+  );
+}
+
+export default function AdminLoginPage() {
+  return (
+    <Suspense fallback={<AdminLoginFallback />}>
+      <AdminLoginForm />
+    </Suspense>
   );
 }

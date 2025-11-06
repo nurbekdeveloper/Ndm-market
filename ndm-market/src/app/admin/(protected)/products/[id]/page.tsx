@@ -32,6 +32,8 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
     redirect("/admin/products");
   }
 
+  const existingProduct = product;
+
   const [categories, brands] = await Promise.all([
     prisma.category.findMany({ orderBy: { nameUz: "asc" } }),
     prisma.brand.findMany({ orderBy: { nameUz: "asc" } }),
@@ -57,13 +59,13 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
 
     let slug = slugInput || slugify(nameUz) || slugify(nameRu);
     if (!slug) {
-      slug = product.slug;
+      slug = existingProduct.slug;
     }
 
-    if (slug !== product.slug) {
+    if (slug !== existingProduct.slug) {
       const exists = await prisma.product.findUnique({ where: { slug } });
-      if (exists && exists.id !== product.id) {
-        slug = `${slug}-${product.id}`;
+      if (exists && exists.id !== existingProduct.id) {
+        slug = `${slug}-${existingProduct.id}`;
       }
     }
 
@@ -82,10 +84,10 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
       }
     }
 
-    const nextOrder = await prisma.productImage.count({ where: { productId: id } });
+    const nextOrder = await prisma.productImage.count({ where: { productId: existingProduct.id } });
 
     await prisma.product.update({
-      where: { id },
+      where: { id: existingProduct.id },
       data: {
         nameUz,
         nameRu,
@@ -125,7 +127,7 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
           Name (UZ)
           <input
             name="nameUz"
-            defaultValue={product.nameUz}
+                defaultValue={existingProduct.nameUz}
             required
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           />
@@ -134,7 +136,7 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
           Name (RU)
           <input
             name="nameRu"
-            defaultValue={product.nameRu}
+                defaultValue={existingProduct.nameRu}
             required
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           />
@@ -143,7 +145,7 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
           Slug
           <input
             name="slug"
-            defaultValue={product.slug}
+                defaultValue={existingProduct.slug}
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           />
         </label>
@@ -151,7 +153,7 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
           Visibility
           <select
             name="visibility"
-            defaultValue={product.visibility}
+                defaultValue={existingProduct.visibility}
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           >
             <option value={ProductVisibility.ACTIVE}>Active</option>
@@ -165,7 +167,7 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
           Category
           <select
             name="categoryId"
-            defaultValue={product.categoryId}
+              defaultValue={existingProduct.categoryId}
             required
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           >
@@ -180,7 +182,7 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
           Brand
           <select
             name="brandId"
-            defaultValue={product.brandId ?? ""}
+              defaultValue={existingProduct.brandId ?? ""}
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           >
             <option value="">No brand</option>
@@ -198,7 +200,7 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
         <textarea
           name="descriptionUz"
           rows={3}
-          defaultValue={product.descriptionUz ?? ""}
+              defaultValue={existingProduct.descriptionUz ?? ""}
           className="w-full rounded-3xl border border-subtle/80 bg-surface px-4 py-3 text-sm text-ink outline-none focus:border-primary"
         />
       </label>
@@ -208,7 +210,7 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
         <textarea
           name="descriptionRu"
           rows={3}
-          defaultValue={product.descriptionRu ?? ""}
+              defaultValue={existingProduct.descriptionRu ?? ""}
           className="w-full rounded-3xl border border-subtle/80 bg-surface px-4 py-3 text-sm text-ink outline-none focus:border-primary"
         />
       </label>
@@ -218,15 +220,15 @@ export default async function EditProductPage({ params }: ProductEditPageProps) 
         <textarea
           name="specs"
           rows={5}
-          defaultValue={product.specs ?? ""}
+              defaultValue={existingProduct.specs ?? ""}
           className="w-full rounded-3xl border border-subtle/80 bg-surface px-4 py-3 text-sm text-ink outline-none focus:border-primary"
         />
       </label>
 
         <div className="space-y-3">
           <p className="text-sm font-semibold text-muted">Existing images</p>
-          <div className="flex flex-wrap gap-4">
-            {product.images.map((image) => (
+            <div className="flex flex-wrap gap-4">
+              {existingProduct.images.map((image) => (
               <label key={image.id} className="group relative block overflow-hidden rounded-[var(--radius-md)] border border-subtle/60">
                 <Image
                   src={image.url}

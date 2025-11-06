@@ -20,6 +20,7 @@ export default async function EditBrandPage({ params }: EditBrandPageProps) {
   if (!brand) {
     redirect("/admin/brands");
   }
+  const existingBrand = brand;
 
   async function updateBrand(formData: FormData) {
     "use server";
@@ -33,13 +34,13 @@ export default async function EditBrandPage({ params }: EditBrandPageProps) {
       throw new Error("Names are required");
     }
 
-    let slug = slugInput || slugify(nameUz) || slugify(nameRu) || brand.slug;
-    if (slug !== brand.slug) {
+    let slug = slugInput || slugify(nameUz) || slugify(nameRu) || existingBrand.slug;
+    if (slug !== existingBrand.slug) {
       const exists = await prisma.brand.findUnique({ where: { slug } });
-      if (exists && exists.id !== brand.id) slug = `${slug}-${brand.id}`;
+      if (exists && exists.id !== existingBrand.id) slug = `${slug}-${existingBrand.id}`;
     }
 
-    let logoUrl = brand.logoUrl ?? undefined;
+    let logoUrl = existingBrand.logoUrl ?? undefined;
     if (file && typeof file === "object" && file.size) {
       logoUrl = await saveUpload(file, "brands");
     } else if (removeLogo) {
@@ -47,7 +48,7 @@ export default async function EditBrandPage({ params }: EditBrandPageProps) {
     }
 
     await prisma.brand.update({
-      where: { id },
+      where: { id: existingBrand.id },
       data: {
         nameUz,
         nameRu,
@@ -75,7 +76,7 @@ export default async function EditBrandPage({ params }: EditBrandPageProps) {
           Name (UZ)
           <input
             name="nameUz"
-            defaultValue={brand.nameUz}
+            defaultValue={existingBrand.nameUz}
             required
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           />
@@ -84,7 +85,7 @@ export default async function EditBrandPage({ params }: EditBrandPageProps) {
           Name (RU)
           <input
             name="nameRu"
-            defaultValue={brand.nameRu}
+            defaultValue={existingBrand.nameRu}
             required
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           />
@@ -93,7 +94,7 @@ export default async function EditBrandPage({ params }: EditBrandPageProps) {
           Slug
           <input
             name="slug"
-            defaultValue={brand.slug}
+            defaultValue={existingBrand.slug}
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           />
         </label>
@@ -101,11 +102,11 @@ export default async function EditBrandPage({ params }: EditBrandPageProps) {
 
         <div className="space-y-2 text-sm font-semibold text-muted">
           <span>Current logo</span>
-          {brand.logoUrl ? (
+          {existingBrand.logoUrl ? (
             <div className="flex items-center gap-4">
               <Image
-                src={brand.logoUrl}
-                alt={brand.nameUz}
+                src={existingBrand.logoUrl}
+                alt={existingBrand.nameUz}
                 width={96}
                 height={96}
                 className="h-24 w-24 rounded-[var(--radius-md)] object-cover"
@@ -119,15 +120,15 @@ export default async function EditBrandPage({ params }: EditBrandPageProps) {
           )}
         </div>
 
-      <label className="space-y-2 text-sm font-semibold text-muted">
-        Replace logo
-        <input
-          type="file"
-          name="logo"
-          accept="image/*"
-          className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm"
-        />
-      </label>
+        <label className="space-y-2 text-sm font-semibold text-muted">
+          Replace logo
+          <input
+            type="file"
+            name="logo"
+            accept="image/*"
+            className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm"
+          />
+        </label>
 
         <div className="flex justify-end gap-3 pt-4">
           <Link
@@ -136,13 +137,13 @@ export default async function EditBrandPage({ params }: EditBrandPageProps) {
           >
             Cancel
           </Link>
-        <button
-          type="submit"
-          className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20"
-        >
-          Update brand
-        </button>
-      </div>
+          <button
+            type="submit"
+            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20"
+          >
+            Update brand
+          </button>
+        </div>
     </form>
   );
 }

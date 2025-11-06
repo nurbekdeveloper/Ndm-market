@@ -2,17 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { Dictionary } from "@/i18n/dictionaries";
+import type { ProductWithRelations } from "@/lib/data/catalog";
 import type { Locale } from "@/lib/i18n";
 import { pickLocalizedAlt, pickLocalizedDescription, pickLocalizedName } from "@/lib/utils";
-import type { Prisma } from "@prisma/client";
-
-type ProductWithRelations = Prisma.ProductGetPayload<{
-  include: {
-    images: true;
-    category: true;
-    brand: true;
-  };
-}>;
 
 interface ProductCardProps {
   product: ProductWithRelations;

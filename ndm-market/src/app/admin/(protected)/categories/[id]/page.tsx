@@ -23,6 +23,8 @@ export default async function EditCategoryPage({ params }: EditCategoryPageProps
     redirect("/admin/categories");
   }
 
+  const existingCategory = category;
+
   async function updateCategory(formData: FormData) {
     "use server";
 
@@ -38,16 +40,16 @@ export default async function EditCategoryPage({ params }: EditCategoryPageProps
       throw new Error("Names are required");
     }
 
-    let slug = slugInput || slugify(nameUz) || slugify(nameRu) || category.slug;
+    let slug = slugInput || slugify(nameUz) || slugify(nameRu) || existingCategory.slug;
 
-    if (slug !== category.slug) {
+    if (slug !== existingCategory.slug) {
       const exists = await prisma.category.findUnique({ where: { slug } });
       if (exists) {
         slug = `${slug}-${Date.now()}`;
       }
     }
 
-    let imageUrl = category.imageUrl ?? undefined;
+    let imageUrl = existingCategory.imageUrl ?? undefined;
     if (file && typeof file === "object" && file.size) {
       imageUrl = await saveUpload(file, "categories");
     } else if (removeImage) {
@@ -55,7 +57,7 @@ export default async function EditCategoryPage({ params }: EditCategoryPageProps
     }
 
     await prisma.category.update({
-      where: { id },
+      where: { id: existingCategory.id },
       data: {
         nameUz,
         nameRu,
@@ -85,7 +87,7 @@ export default async function EditCategoryPage({ params }: EditCategoryPageProps
           Name (UZ)
           <input
             name="nameUz"
-            defaultValue={category.nameUz}
+              defaultValue={existingCategory.nameUz}
             required
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           />
@@ -94,7 +96,7 @@ export default async function EditCategoryPage({ params }: EditCategoryPageProps
           Name (RU)
           <input
             name="nameRu"
-            defaultValue={category.nameRu}
+              defaultValue={existingCategory.nameRu}
             required
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           />
@@ -103,7 +105,7 @@ export default async function EditCategoryPage({ params }: EditCategoryPageProps
           Slug
           <input
             name="slug"
-            defaultValue={category.slug}
+              defaultValue={existingCategory.slug}
             className="w-full rounded-full border border-subtle/80 bg-surface px-4 py-3 text-sm font-medium text-ink outline-none focus:border-primary"
           />
         </label>
@@ -114,7 +116,7 @@ export default async function EditCategoryPage({ params }: EditCategoryPageProps
         <textarea
           name="descriptionUz"
           rows={3}
-          defaultValue={category.descriptionUz ?? ""}
+            defaultValue={existingCategory.descriptionUz ?? ""}
           className="w-full rounded-3xl border border-subtle/80 bg-surface px-4 py-3 text-sm text-ink outline-none focus:border-primary"
         />
       </label>
@@ -124,18 +126,18 @@ export default async function EditCategoryPage({ params }: EditCategoryPageProps
         <textarea
           name="descriptionRu"
           rows={3}
-          defaultValue={category.descriptionRu ?? ""}
+            defaultValue={existingCategory.descriptionRu ?? ""}
           className="w-full rounded-3xl border border-subtle/80 bg-surface px-4 py-3 text-sm text-ink outline-none focus:border-primary"
         />
       </label>
 
       <div className="space-y-2 text-sm font-semibold text-muted">
         <span>Current image</span>
-        {category.imageUrl ? (
+          {existingCategory.imageUrl ? (
           <div className="flex items-center gap-4">
             <Image
-              src={category.imageUrl}
-              alt={category.nameUz}
+                src={existingCategory.imageUrl}
+                alt={existingCategory.nameUz}
               width={192}
               height={128}
               className="h-32 w-48 rounded-[var(--radius-md)] object-cover"
