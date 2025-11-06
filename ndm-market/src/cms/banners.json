@@ -1,0 +1,44 @@
+[
+  {
+    "id": "banner-home-hero",
+    "image": "/images/banners/hero-industrial.jpg",
+    "link": "/catalog",
+    "alt": {
+      "uz": "NDM Market sanoat materiallari",
+      "ru": "Строительные материалы NDM Market"
+    },
+    "title": {
+      "uz": "Qurilish va ta'mirlash uchun hamma narsa",
+      "ru": "Все для строительства и ремонта"
+    },
+    "subtitle": {
+      "uz": "400+ mahsulot, tez yetkazib berish, ishonchli brendlar",
+      "ru": "400+ товаров, быстрая доставка, надежные бренды"
+    },
+    "active": true,
+    "order": 1,
+    "createdAt": "2024-11-02T12:00:00.000Z",
+    "updatedAt": "2024-11-02T12:00:00.000Z"
+  },
+  {
+    "id": "banner-pumps-promo",
+    "image": "/images/banners/pumps-sale.jpg",
+    "link": "/category/pumps",
+    "alt": {
+      "uz": "Nasoslar chegirma",
+      "ru": "Скидка на насосы"
+    },
+    "title": {
+      "uz": "Shimge va WaterPRO nasoslariga 15% chegirma",
+      "ru": "Скидка 15% на насосы Shimge и WaterPRO"
+    },
+    "subtitle": {
+      "uz": "Aksiya 30 noyabrgacha amal qiladi",
+      "ru": "Акция действует до 30 ноября"
+    },
+    "active": true,
+    "order": 2,
+    "createdAt": "2024-11-02T12:05:00.000Z",
+    "updatedAt": "2024-11-02T12:05:00.000Z"
+  }
+]

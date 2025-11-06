@@ -1,0 +1,87 @@
+{
+  "company": {
+    "name": "NDM Market",
+    "legalName": "NDM Market LLC",
+    "description": {
+      "uz": "NDM Market qurilish va ta'mirlash materiallari bo'yicha yetakchi onlayn do'kon.",
+      "ru": "NDM Market — ведущий интернет-магазин строительных и отделочных материалов."
+    },
+    "locations": [
+      {
+        "label": {
+          "uz": "Toshkent bosh ofis",
+          "ru": "Головной офис в Ташкенте"
+        },
+        "address": "Toshkent shahri, Sergeli tumani, 45-uy",
+        "coordinates": {
+          "lat": 41.25552,
+          "lng": 69.24013
+        }
+      }
+    ],
+    "contact": {
+      "phonePrimary": "+998 (71) 200-60-60",
+      "phoneSecondary": "+998 (90) 123-45-67",
+      "email": "info@ndmmarket.uz",
+      "telegram": "https://t.me/ndm_market",
+      "workingHours": {
+        "uz": "Dushanba–Shanba 09:00-19:00",
+        "ru": "Пн–Сб 09:00-19:00"
+      }
+    }
+  },
+  "languages": [
+    { "code": "uz", "label": "O'zbekcha", "default": true },
+    { "code": "ru", "label": "Русский", "default": false }
+  ],
+  "ui": {
+    "theme": {
+      "primary": "#0F6FC7",
+      "secondary": "#F2F4F8",
+      "dark": "#1A1A1A",
+      "light": "#FFFFFF"
+    }
+  },
+  "checkout": {
+    "shippingOptions": [
+      {
+        "id": "pickup",
+        "label": {
+          "uz": "O'zimiz olib ketamiz",
+          "ru": "Самовывоз"
+        },
+        "price": 0
+      },
+      {
+        "id": "tashkent-delivery",
+        "label": {
+          "uz": "Toshkent bo'ylab yetkazib berish",
+          "ru": "Доставка по Ташкенту"
+        },
+        "price": 40000
+      }
+    ],
+    "paymentMethods": [
+      {
+        "id": "cash_on_delivery",
+        "label": {
+          "uz": "Naqd to'lov",
+          "ru": "Наличными при доставке"
+        }
+      },
+      {
+        "id": "bank_transfer",
+        "label": {
+          "uz": "Bank o'tkazmasi",
+          "ru": "Банковский перевод"
+        }
+      }
+    ]
+  },
+  "analytics": {
+    "gtmId": null,
+    "facebookPixel": null
+  },
+  "createdAt": "2024-11-01T07:00:00.000Z",
+  "updatedAt": "2024-11-01T07:00:00.000Z"
+}

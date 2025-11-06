@@ -1,0 +1,68 @@
+{
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "title": {
+        "uz": "Qurilish materiallari — NDM Market | Blesk, Shimge, Lider Line, WaterPRO",
+        "ru": "Строительные материалы — NDM Market | Blesk, Shimge, Lider Line, WaterPRO"
+      },
+      "description": {
+        "uz": "NDM Market — quvurlar, nasoslar, radiatorlar, tsement va izolatsiyalar onlayn do'koni. O'zbekiston bo'ylab tez yetkazib berish.",
+        "ru": "NDM Market — интернет-магазин труб, насосов, радиаторов, цемента и утеплителей. Быстрая доставка по всему Узбекистану."
+      },
+      "keywords": [
+        "qurilish materiallari",
+        "строительные материалы",
+        "nasoslar",
+        "radiatorlar"
+      ],
+      "ogImage": "/images/meta/home.jpg",
+      "lastUpdated": "2024-11-03T08:00:00.000Z"
+    },
+    {
+      "id": "catalog",
+      "path": "/catalog",
+      "title": {
+        "uz": "Mahsulotlar katalogi — NDM Market",
+        "ru": "Каталог товаров — NDM Market"
+      },
+      "description": {
+        "uz": "300 dan ortiq qurilish va ta'mirlash mahsulotlarini ko'ring. Filtrlash va tezkor qidiruv.",
+        "ru": "Просматривайте более 300 товаров для строительства и ремонта. Фильтры и быстрый поиск."
+      },
+      "keywords": [
+        "katalog",
+        "catalog",
+        "qurilish",
+        "строительство"
+      ],
+      "ogImage": "/images/meta/catalog.jpg",
+      "lastUpdated": "2024-11-03T08:10:00.000Z"
+    },
+    {
+      "id": "contact",
+      "path": "/contact",
+      "title": {
+        "uz": "Aloqa — NDM Market",
+        "ru": "Контакты — NDM Market"
+      },
+      "description": {
+        "uz": "NDM Market bilan bog'laning: telefon, manzil, Telegram. Toshkentdagi ofisimiz sizni kutmoqda.",
+        "ru": "Свяжитесь с NDM Market: телефон, адрес, Telegram. Наш офис в Ташкенте открыт для вас."
+      },
+      "keywords": [
+        "aloqa",
+        "контакты",
+        "NDM Market"
+      ],
+      "ogImage": "/images/meta/contact.jpg",
+      "lastUpdated": "2024-11-03T08:20:00.000Z"
+    }
+  ],
+  "sitemap": {
+    "enabled": true,
+    "includeAdmin": false,
+    "lastGeneratedAt": null
+  }
+}

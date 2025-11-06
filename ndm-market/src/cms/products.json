@@ -1,0 +1,335 @@
+[
+  {
+    "id": "prod-shimge-jet80",
+    "slug": "shimge-jet80",
+    "sku": "JET80",
+    "name": {
+      "uz": "Shimge Jet80 suv nasosi",
+      "ru": "Насос Shimge Jet80"
+    },
+    "description": {
+      "uz": "Shimge Jet80 bosimli nasos uy va kichik sanoat ehtiyojlari uchun mos. Energiya tejamkor va jim ishlaydi.",
+      "ru": "Shimge Jet80 поверхностный насос подходит для дома и малого бизнеса. Энергоэффективный и тихий в работе."
+    },
+    "price": 1875000,
+    "stock": 24,
+    "categoryId": "cat-pumps",
+    "brandId": "brand-shimge",
+    "images": [
+      "/images/products/shimge-jet80-1.jpg",
+      "/images/products/shimge-jet80-2.jpg"
+    ],
+    "status": "active",
+    "attributes": {
+      "power": "0.8 kW",
+      "flowRate": "60 L/min",
+      "voltage": "220V"
+    },
+    "tags": ["nasos", "pump", "shimge"],
+    "seo": {
+      "title": {
+        "uz": "Shimge Jet80 nasosi | NDM Market",
+        "ru": "Насос Shimge Jet80 | NDM Market"
+      },
+      "description": {
+        "uz": "Shimge Jet80 suv nasosi yuqori bosim va ishonchlilikni taklif etadi. Kafolat va tez yetkazib berish.",
+        "ru": "Shimge Jet80 обеспечивает стабильное давление и надежность. Гарантия и быстрая доставка."
+      }
+    },
+    "featured": true,
+    "availability": "in_stock",
+    "createdAt": "2024-11-02T10:00:00.000Z",
+    "updatedAt": "2024-11-02T10:00:00.000Z"
+  },
+  {
+    "id": "prod-waterpro-maxflow-50",
+    "slug": "waterpro-maxflow-50",
+    "sku": "WF50",
+    "name": {
+      "uz": "WaterPRO MaxFlow 50 nasosi",
+      "ru": "Насос WaterPRO MaxFlow 50"
+    },
+    "description": {
+      "uz": "Ko'p qavatli uylar uchun mo'ljallangan suv ta'minot nasosi. Past shovqin darajasi va zanglamas po'lat korpus.",
+      "ru": "Насос для водоснабжения многоэтажных домов с низким уровнем шума и корпусом из нержавейки."
+    },
+    "price": 2150000,
+    "stock": 12,
+    "categoryId": "cat-pumps",
+    "brandId": "brand-waterpro",
+    "images": [
+      "/images/products/waterpro-maxflow-50-1.jpg",
+      "/images/products/waterpro-maxflow-50-2.jpg"
+    ],
+    "status": "active",
+    "attributes": {
+      "power": "1.2 kW",
+      "flowRate": "80 L/min",
+      "voltage": "220V"
+    },
+    "tags": ["nasos", "waterpro"],
+    "seo": {
+      "title": {
+        "uz": "WaterPRO MaxFlow 50 nasosi",
+        "ru": "WaterPRO MaxFlow 50 насос"
+      },
+      "description": {
+        "uz": "WaterPRO MaxFlow 50 — samarali bosim nasosi. Tez yetkazib berish va servis.",
+        "ru": "WaterPRO MaxFlow 50 — эффективный насос с быстрой поставкой и сервисом."
+      }
+    },
+    "featured": false,
+    "availability": "low_stock",
+    "createdAt": "2024-11-02T10:10:00.000Z",
+    "updatedAt": "2024-11-02T10:10:00.000Z"
+  },
+  {
+    "id": "prod-blesk-copper-pipe-22",
+    "slug": "blesk-copper-pipe-22mm",
+    "sku": "PIPE22CU",
+    "name": {
+      "uz": "Blesk mis quvur 22 mm",
+      "ru": "Медная труба Blesk 22 мм"
+    },
+    "description": {
+      "uz": "Issiq va sovuq suv tizimlari uchun yuqori sifatli mis quvur. Koroziyaga chidamli.",
+      "ru": "Качественная медная труба для систем горячего и холодного водоснабжения. Защита от коррозии."
+    },
+    "price": 89000,
+    "stock": 180,
+    "categoryId": "cat-pipes",
+    "brandId": "brand-blesk",
+    "images": [
+      "/images/products/blesk-copper-pipe-1.jpg",
+      "/images/products/blesk-copper-pipe-2.jpg"
+    ],
+    "status": "active",
+    "attributes": {
+      "diameter": "22 mm",
+      "length": "3 m",
+      "material": "Cu-DHP"
+    },
+    "tags": ["pipe", "copper"],
+    "seo": {
+      "title": {
+        "uz": "Blesk 22 mm mis quvur",
+        "ru": "Медная труба Blesk 22 мм"
+      },
+      "description": {
+        "uz": "Blesk mis quvurlari issiq va sovuq tizimlar uchun ideal. Omborimizda mavjud.",
+        "ru": "Медные трубы Blesk идеально подходят для отопления и водоснабжения. В наличии на складе."
+      }
+    },
+    "featured": true,
+    "availability": "in_stock",
+    "createdAt": "2024-11-02T10:20:00.000Z",
+    "updatedAt": "2024-11-02T10:20:00.000Z"
+  },
+  {
+    "id": "prod-lider-line-panel-22",
+    "slug": "lider-line-panel-22",
+    "sku": "RAD22",
+    "name": {
+      "uz": "Lider Line panel radiator 22 tip",
+      "ru": "Панельный радиатор Lider Line тип 22"
+    },
+    "description": {
+      "uz": "Issiq suv tizimlari uchun yuqori samarali po'lat panel radiator. To'liq komplekt bilan yetkaziladi.",
+      "ru": "Высокоэффективный стальной панельный радиатор для систем отопления. Поставляется в полной комплектации."
+    },
+    "price": 1260000,
+    "stock": 45,
+    "categoryId": "cat-radiators",
+    "brandId": "brand-lider-line",
+    "images": [
+      "/images/products/lider-line-panel-22-1.jpg",
+      "/images/products/lider-line-panel-22-2.jpg"
+    ],
+    "status": "active",
+    "attributes": {
+      "height": "500 mm",
+      "length": "800 mm",
+      "connection": "4x G1/2"
+    },
+    "tags": ["radiator", "panel"],
+    "seo": {
+      "title": {
+        "uz": "Lider Line 22 panel radiator",
+        "ru": "Радиатор Lider Line тип 22"
+      },
+      "description": {
+        "uz": "Energiya samarador Lider Line radiatorlari bilan uyda issiqlikka erishing.",
+        "ru": "Радиаторы Lider Line дарят надежное тепло и экономию энергии."
+      }
+    },
+    "featured": false,
+    "availability": "in_stock",
+    "createdAt": "2024-11-02T10:30:00.000Z",
+    "updatedAt": "2024-11-02T10:30:00.000Z"
+  },
+  {
+    "id": "prod-waterpro-compact-80",
+    "slug": "waterpro-compact-80",
+    "sku": "WP-80",
+    "name": {
+      "uz": "WaterPRO Compact 80 suv isitgich",
+      "ru": "Водонагреватель WaterPRO Compact 80"
+    },
+    "description": {
+      "uz": "80 litr hajmli vertikal suv isitgich. Magniy anod va ichki emal qoplama bilan.",
+      "ru": "Вертикальный водонагреватель на 80 литров с магниевым анодом и эмалированным баком."
+    },
+    "price": 1890000,
+    "stock": 30,
+    "categoryId": "cat-water-heaters",
+    "brandId": "brand-waterpro",
+    "images": [
+      "/images/products/waterpro-compact-80-1.jpg",
+      "/images/products/waterpro-compact-80-2.jpg"
+    ],
+    "status": "active",
+    "attributes": {
+      "capacity": "80 L",
+      "power": "2 kW",
+      "installation": "Vertical"
+    },
+    "tags": ["water-heater", "electric"],
+    "seo": {
+      "title": {
+        "uz": "WaterPRO Compact 80 suv isitgich",
+        "ru": "Водонагреватель WaterPRO Compact 80"
+      },
+      "description": {
+        "uz": "WaterPRO Compact 80 suv isitgichlari bilan issiq suv har doim mavjud.",
+        "ru": "WaterPRO Compact 80 обеспечит горячую воду в любое время."
+      }
+    },
+    "featured": true,
+    "availability": "in_stock",
+    "createdAt": "2024-11-02T10:40:00.000Z",
+    "updatedAt": "2024-11-02T10:40:00.000Z"
+  },
+  {
+    "id": "prod-blesk-thermal-roll",
+    "slug": "blesk-thermal-roll",
+    "sku": "INS10",
+    "name": {
+      "uz": "Blesk issiqlik izolatsiyasi 10 m",
+      "ru": "Утеплитель Blesk рулон 10 м"
+    },
+    "description": {
+      "uz": "Polietilen asosli issiqlik izolatsiyasi. Metallizatsiyalangan qatlam bilan uyda issiqlikni saqlang.",
+      "ru": "Теплоизоляция на основе полиэтилена с металлизированным слоем для сохранения тепла."
+    },
+    "price": 135000,
+    "stock": 90,
+    "categoryId": "cat-insulation",
+    "brandId": "brand-blesk",
+    "images": [
+      "/images/products/blesk-thermal-roll-1.jpg"
+    ],
+    "status": "active",
+    "attributes": {
+      "length": "10 m",
+      "thickness": "5 mm",
+      "material": "Foil PE"
+    },
+    "tags": ["insulation", "blesk"],
+    "seo": {
+      "title": {
+        "uz": "Blesk issiqlik izolatsiya ruloni",
+        "ru": "Рулон утеплителя Blesk"
+      },
+      "description": {
+        "uz": "Blesk issiqlik izolatsiyasi bilan energiya tejamkoring.",
+        "ru": "Экономьте энергию с утеплителем Blesk."
+      }
+    },
+    "featured": false,
+    "availability": "in_stock",
+    "createdAt": "2024-11-02T10:50:00.000Z",
+    "updatedAt": "2024-11-02T10:50:00.000Z"
+  },
+  {
+    "id": "prod-liderline-cement-m500",
+    "slug": "lider-line-cement-m500",
+    "sku": "CEM500",
+    "name": {
+      "uz": "Lider Line M500 tsement aralashmasi",
+      "ru": "Цементная смесь Lider Line M500"
+    },
+    "description": {
+      "uz": "Monolit va temir-beton konstruktsiyalar uchun yuqori mustahkamlikdagi tsement aralashmasi.",
+      "ru": "Высокопрочная цементная смесь для монолитных и железобетонных конструкций."
+    },
+    "price": 68000,
+    "stock": 250,
+    "categoryId": "cat-cements",
+    "brandId": "brand-lider-line",
+    "images": [
+      "/images/products/liderline-cement-m500-1.jpg"
+    ],
+    "status": "active",
+    "attributes": {
+      "weight": "25 kg",
+      "class": "M500",
+      "application": "Beton, suvoq"
+    },
+    "tags": ["cement", "m500"],
+    "seo": {
+      "title": {
+        "uz": "Lider Line M500 tsement",
+        "ru": "Цемент Lider Line M500"
+      },
+      "description": {
+        "uz": "Lider Line M500 bilan mustahkam konstruktsiyalar qurish oson.",
+        "ru": "Стройте надежно с цементом Lider Line M500."
+      }
+    },
+    "featured": false,
+    "availability": "in_stock",
+    "createdAt": "2024-11-02T11:00:00.000Z",
+    "updatedAt": "2024-11-02T11:00:00.000Z"
+  },
+  {
+    "id": "prod-blesk-adhesive-tile-flex",
+    "slug": "blesk-adhesive-tile-flex",
+    "sku": "ADFLEX",
+    "name": {
+      "uz": "Blesk Tile Flex yopishqoq aralashma",
+      "ru": "Клей для плитки Blesk Tile Flex"
+    },
+    "description": {
+      "uz": "Ichki va tashqi ishlar uchun elastik keramika plitka yopishtirgichi.",
+      "ru": "Эластичный плиточный клей для внутренних и наружных работ."
+    },
+    "price": 92000,
+    "stock": 140,
+    "categoryId": "cat-cements",
+    "brandId": "brand-blesk",
+    "images": [
+      "/images/products/blesk-adhesive-tile-flex-1.jpg"
+    ],
+    "status": "active",
+    "attributes": {
+      "weight": "25 kg",
+      "mixRatio": "0.26 L/kg",
+      "openTime": "25 min"
+    },
+    "tags": ["adhesive", "tile"],
+    "seo": {
+      "title": {
+        "uz": "Blesk Tile Flex yopishqoq",
+        "ru": "Клей Blesk Tile Flex"
+      },
+      "description": {
+        "uz": "Blesk Tile Flex — plitka uchun ishonchli yopishtirgich.",
+        "ru": "Blesk Tile Flex — надежный клей для плитки."
+      }
+    },
+    "featured": false,
+    "availability": "in_stock",
+    "createdAt": "2024-11-02T11:10:00.000Z",
+    "updatedAt": "2024-11-02T11:10:00.000Z"
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "ord-20241105-1001",
+    "customerName": "Azizbek Rakhimov",
+    "phone": "+998901112233",
+    "address": "Toshkent, Chilonzor tumani, 12-uy",
+    "paymentMethod": "cash_on_delivery",
+    "items": [
+      {
+        "productId": "prod-shimge-jet80",
+        "name": {
+          "uz": "Shimge Jet80 suv nasosi",
+          "ru": "Насос Shimge Jet80"
+        },
+        "sku": "JET80",
+        "quantity": 1,
+        "price": 1875000
+      },
+      {
+        "productId": "prod-blesk-copper-pipe-22",
+        "name": {
+          "uz": "Blesk mis quvur 22 mm",
+          "ru": "Медная труба Blesk 22 мм"
+        },
+        "sku": "PIPE22CU",
+        "quantity": 6,
+        "price": 89000
+      }
+    ],
+    "total": 2419000,
+    "status": "pending",
+    "comment": "Yetkazib berishdan oldin qo'ng'iroq qiling",
+    "createdAt": "2024-11-05T09:15:00.000Z",
+    "updatedAt": "2024-11-05T09:15:00.000Z"
+  },
+  {
+    "id": "ord-20241104-1002",
+    "customerName": "Natalya Petrova",
+    "phone": "+998971223344",
+    "address": "Toshkent viloyati, Chirchiq shahri, 5-uy",
+    "paymentMethod": "bank_transfer",
+    "items": [
+      {
+        "productId": "prod-waterpro-compact-80",
+        "name": {
+          "uz": "WaterPRO Compact 80 suv isitgich",
+          "ru": "Водонагреватель WaterPRO Compact 80"
+        },
+        "sku": "WP-80",
+        "quantity": 2,
+        "price": 1890000
+      }
+    ],
+    "total": 3780000,
+    "status": "confirmed",
+    "comment": "Bank o'tkazmasi tasdiqlangan",
+    "createdAt": "2024-11-04T14:45:00.000Z",
+    "updatedAt": "2024-11-05T11:20:00.000Z"
+  }
+]
