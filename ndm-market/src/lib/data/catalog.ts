@@ -1,7 +1,22 @@
 import { ProductVisibility } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 
 import prisma from "@/lib/prisma";
 import { Locale, locales } from "@/lib/i18n";
+
+const productWithRelationsInclude = {
+  category: true,
+  brand: true,
+  images: {
+    orderBy: {
+      order: "asc" as const,
+    },
+  },
+} satisfies Prisma.ProductInclude;
+
+export type ProductWithRelations = Prisma.ProductGetPayload<{
+  include: typeof productWithRelationsInclude;
+}>;
 
 export async function getLanguageOrder() {
   const setting = await prisma.siteSetting.findUnique({
@@ -78,11 +93,7 @@ export async function getFeaturedProducts(limit = 6) {
     where: { visibility: ProductVisibility.ACTIVE },
     orderBy: { createdAt: "desc" },
     take: limit,
-    include: {
-      category: true,
-      brand: true,
-      images: { orderBy: { order: "asc" } },
-    },
+    include: productWithRelationsInclude,
   });
 }
 

@@ -10,7 +10,7 @@ import { isLocale, locales } from "@/lib/i18n";
 
 interface LanguageLayoutProps {
   children: ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }
 
 export async function generateStaticParams() {
@@ -20,9 +20,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
-  const { lang } = params;
+  const { lang } = await params;
 
   if (!isLocale(lang)) {
     return {};
@@ -40,7 +40,7 @@ export default async function LanguageLayout({
   children,
   params,
 }: LanguageLayoutProps) {
-  const locale = params.lang;
+  const { lang: locale } = await params;
 
   if (!isLocale(locale)) {
     notFound();
