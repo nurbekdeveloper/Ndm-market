@@ -1,0 +1,31 @@
+[
+  {
+    "id": "admin-ndm-root",
+    "username": "ndm.super",
+    "email": "admin@ndmmarket.uz",
+    "passwordHash": "$2b$10$tO8Diz2ve7sk8bAHbKU4UOSWHIBHc/klYMHhFzV/qrUc7bdQV8gaq",
+    "role": "superadmin",
+    "status": "active",
+    "permissions": [
+      "products:read",
+      "products:write",
+      "orders:read",
+      "orders:write",
+      "categories:read",
+      "categories:write",
+      "brands:read",
+      "brands:write",
+      "banners:read",
+      "banners:write",
+      "seo:read",
+      "seo:write",
+      "settings:read",
+      "settings:write",
+      "admins:read",
+      "admins:write"
+    ],
+    "lastLoginAt": null,
+    "createdAt": "2024-11-01T07:30:00.000Z",
+    "updatedAt": "2024-11-01T07:30:00.000Z"
+  }
+]

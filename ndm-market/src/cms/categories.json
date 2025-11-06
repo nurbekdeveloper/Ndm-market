@@ -1,0 +1,68 @@
+[
+  {
+    "id": "cat-pipes",
+    "slug": "pipes",
+    "name": {
+      "uz": "Quvurlar",
+      "ru": "Трубы"
+    },
+    "image": "/images/categories/pipes.jpg",
+    "createdAt": "2024-11-01T08:00:00.000Z",
+    "updatedAt": "2024-11-01T08:00:00.000Z"
+  },
+  {
+    "id": "cat-radiators",
+    "slug": "radiators",
+    "name": {
+      "uz": "Radiatorlar",
+      "ru": "Радиаторы"
+    },
+    "image": "/images/categories/radiators.jpg",
+    "createdAt": "2024-11-01T08:05:00.000Z",
+    "updatedAt": "2024-11-01T08:05:00.000Z"
+  },
+  {
+    "id": "cat-water-heaters",
+    "slug": "water-heaters",
+    "name": {
+      "uz": "Suv isitgichlar",
+      "ru": "Водонагреватели"
+    },
+    "image": "/images/categories/water-heaters.jpg",
+    "createdAt": "2024-11-01T08:10:00.000Z",
+    "updatedAt": "2024-11-01T08:10:00.000Z"
+  },
+  {
+    "id": "cat-pumps",
+    "slug": "pumps",
+    "name": {
+      "uz": "Nasoslar",
+      "ru": "Насосы"
+    },
+    "image": "/images/categories/pumps.jpg",
+    "createdAt": "2024-11-01T08:15:00.000Z",
+    "updatedAt": "2024-11-01T08:15:00.000Z"
+  },
+  {
+    "id": "cat-insulation",
+    "slug": "insulation",
+    "name": {
+      "uz": "Issiqlik izolatsiyasi",
+      "ru": "Утеплители"
+    },
+    "image": "/images/categories/insulation.jpg",
+    "createdAt": "2024-11-01T08:20:00.000Z",
+    "updatedAt": "2024-11-01T08:20:00.000Z"
+  },
+  {
+    "id": "cat-cements",
+    "slug": "cement-mixes",
+    "name": {
+      "uz": "Shpaklyovka va tsement",
+      "ru": "Смеси и цемент"
+    },
+    "image": "/images/categories/cement.jpg",
+    "createdAt": "2024-11-01T08:25:00.000Z",
+    "updatedAt": "2024-11-01T08:25:00.000Z"
+  }
+]
